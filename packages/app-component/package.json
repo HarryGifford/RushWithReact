@@ -8,8 +8,13 @@
     "build": "tsc -p .",
     "watch": "tsc -p . -w"
   },
-  "author": "Harry Gifford",
-  "license": "ISC",
+  "author": "Microsoft",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HarryGifford/RushWithReact",
+    "directory": "./packages/app-component"
+  },
   "dependencies": {
     "tslib": "^1.10.0"
   },

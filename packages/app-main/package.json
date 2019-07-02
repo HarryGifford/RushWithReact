@@ -7,8 +7,13 @@
     "build": "npx -q cross-env NODE_ENV=production webpack",
     "start": "webpack-dev-server"
   },
-  "author": "Harry Gifford",
-  "license": "ISC",
+  "author": "Microsoft",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HarryGifford/RushWithReact",
+    "directory": "./packages/app-main"
+  },
   "dependencies": {
     "@types/react": "^16.8.22",
     "@types/react-dom": "^16.8.4",

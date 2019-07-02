@@ -1,0 +1,25 @@
+{
+  "name": "app-component",
+  "version": "1.0.0",
+  "description": "Simple app",
+  "main": "dist/cjs/index",
+  "types": "dist/cjs/index.d.ts",
+  "scripts": {
+    "build": "tsc -p .",
+    "watch": "tsc -p . -w"
+  },
+  "author": "Harry Gifford",
+  "license": "ISC",
+  "dependencies": {
+    "tslib": "^1.10.0"
+  },
+  "devDependencies": {
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.2"
+  },
+  "peerDependencies": {
+    "@types/react": "^16.8.22",
+    "office-ui-fabric-react": "^7.6.3",
+    "react": "^16.8.6"
+  }
+}

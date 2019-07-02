@@ -1,0 +1,28 @@
+{
+  "name": "app-main",
+  "version": "1.0.0",
+  "description": "Simple rush test",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "build": "npx -q cross-env NODE_ENV=production webpack",
+    "start": "webpack-dev-server"
+  },
+  "author": "Harry Gifford",
+  "license": "ISC",
+  "dependencies": {
+    "@types/react": "^16.8.22",
+    "@types/react-dom": "^16.8.4",
+    "app-component": "^1.0.0",
+    "office-ui-fabric-react": "^7.6.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "tslib": "^1.10.0"
+  },
+  "devDependencies": {
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.2",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
+  }
+}

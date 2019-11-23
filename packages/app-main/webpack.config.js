@@ -13,11 +13,12 @@ module.exports = {
     devtool: isEnvDevelopment ? "eval-source-map" : "source-map",
     devServer: {
         open: true,
-        contentBase: ["dist", "static"],
-        publicPath: "dist",
+        contentBase: ["static"],
+        publicPath: "/",
         port: 3000,
         overlay: true,
-        https: isHttps
+        https: isHttps,
+        watchContentBase: true
     },
     mode: isEnvDevelopment ? "development" : "production",
     module: {

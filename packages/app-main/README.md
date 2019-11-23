@@ -13,7 +13,7 @@ Bundles the app for the web and for local development.
 
 You can set the following commands to control the build.
 
-| Variable   | Type                       | Description                                                        |
-| ---------- | -------------------------- | ------------------------------------------------------------------ |
-| `NODE_ENV` | `production | development` | Set to `production` to generate an optimized build.                |
-| `HTTPS`    | `true | false`             | Set to true to run an HTTPS web server when running `rushx start`. |
+| Variable   | Description                                                        |
+| ---------- | ------------------------------------------------------------------ |
+| `NODE_ENV` | Set to `production` to generate an optimized build.                |
+| `HTTPS`    | Set to `true` to run an HTTPS web server when running `rushx start`. |

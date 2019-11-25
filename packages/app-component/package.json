@@ -2,11 +2,14 @@
   "name": "app-component",
   "version": "1.0.0",
   "description": "Simple app",
-  "main": "dist/cjs/index",
-  "types": "dist/cjs/index.d.ts",
+  "main": "dist/index",
+  "module": "lib/index",
+  "types": "lib/index.d.ts",
+  "sideEffects": false,
   "scripts": {
-    "build": "tsc -p .",
-    "watch": "tsc -p . -w"
+    "build": "tsc && rushx build:commonjs",
+    "build:commonjs": "babel ./lib -d ./dist -s",
+    "watch": "tsc -w"
   },
   "author": "Microsoft",
   "license": "MIT",
@@ -15,10 +18,17 @@
     "url": "https://github.com/HarryGifford/RushWithReact",
     "directory": "./packages/app-component"
   },
+  "files": [
+    "dist",
+    "lib"
+  ],
   "dependencies": {
     "tslib": "^1.10.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.0.0",
     "@types/react": "^16.8.22",
     "office-ui-fabric-react": "^7.6.3",
     "react": "^16.8.6",

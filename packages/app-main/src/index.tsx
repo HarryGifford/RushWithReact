@@ -1,15 +1,18 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom";
 
-import {
-    initializeIcons
-} from "office-ui-fabric-react";
+const LoadingComponent = <div>Loading...</div>;
 
-import MyElement from "app-component";
-
-const main = () => {
-    initializeIcons();
-    ReactDOM.render(<MyElement />, document.getElementById("root"));
+const render = () => {
+    const App = lazy(() =>
+        import(/* webpackChunkName: "app-component" */ "app-component")
+    );
+    ReactDOM.render(
+        <Suspense fallback={LoadingComponent}>
+            <App />
+        </Suspense>,
+        document.getElementById("root")
+    );
 };
 
-main();
+render();

@@ -8,7 +8,7 @@ const isHttps = process.env.HTTPS === "true";
 /** @type { import("webpack").Configuration } */
 module.exports = {
     entry: {
-        bundle: "./src/index.tsx"
+        bundle: "./src/index"
     },
     devtool: isEnvDevelopment ? "eval-source-map" : "source-map",
     devServer: {
@@ -42,8 +42,9 @@ module.exports = {
     },
     output: {
         filename: "[name].js",
-        chunkFilename: "[chunkhash].js",
+        chunkFilename: "[name].[chunkhash].js",
         path: path.resolve(__dirname, "dist"),
+        publicPath: "/",
         hashDigestLength: 5
     }
 };

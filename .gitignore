@@ -63,3 +63,8 @@ common/temp/**
 package-deps.json
 
 dist/
+lib/
+
+# Typescript caching info
+
+tsconfig.tsbuildinfo

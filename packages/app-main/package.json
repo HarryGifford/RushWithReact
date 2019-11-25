@@ -4,8 +4,8 @@
   "description": "Simple rush test",
   "main": "dist/bundle.js",
   "scripts": {
-    "build": "npx -q cross-env NODE_ENV=production webpack",
-    "start": "webpack-dev-server"
+    "build": "npx -q cross-env NODE_ENV=production wp",
+    "start": "npx -q cross-env NODE_ENV=development wp"
   },
   "author": "Microsoft",
   "license": "MIT",
@@ -24,11 +24,13 @@
     "tslib": "^1.10.0"
   },
   "devDependencies": {
+    "@types/webpack-env": "^1.13.6",
+    "@types/webpack-plugin-serve": "^0.10.0",
     "source-map-loader": "^0.2.4",
     "ts-loader": "^6.0.4",
     "typescript": "^3.5.2",
     "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.5",
-    "webpack-dev-server": "^3.7.2"
+    "webpack-nano": "^0.8.1",
+    "webpack-plugin-serve": "^0.12.1"
   }
 }

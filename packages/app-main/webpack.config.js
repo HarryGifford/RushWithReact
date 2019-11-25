@@ -2,13 +2,19 @@
 /** @type { import("path") } */
 const path = require("path");
 
+/** @type { import("webpack-plugin-serve") } */
+const { WebpackPluginServe } = require("webpack-plugin-serve");
+
 const isEnvDevelopment = process.env.NODE_ENV !== "production";
 const isHttps = process.env.HTTPS === "true";
 
 /** @type { import("webpack").Configuration } */
 module.exports = {
     entry: {
-        bundle: "./src/index.tsx"
+        bundle: [
+            "./src/index",
+            isEnvDevelopment ? "webpack-plugin-serve/client" : undefined
+        ].filter(x => x)
     },
     devtool: isEnvDevelopment ? "eval-source-map" : "source-map",
     devServer: {
@@ -42,8 +48,21 @@ module.exports = {
     },
     output: {
         filename: "[name].js",
-        chunkFilename: "[chunkhash].js",
+        chunkFilename: isEnvDevelopment ? "[id].js" : "[chunkhash].js",
         path: path.resolve(__dirname, "dist"),
+        publicPath: "/",
         hashDigestLength: 5
-    }
+    },
+    plugins: [
+        isEnvDevelopment ? new WebpackPluginServe({
+            host: "localhost",
+            open: true,
+            port: 3000,
+            static: [
+                path.resolve(__dirname, "static"),
+                path.resolve(__dirname, "dist")
+            ]
+        }) : undefined
+    ].filter(x => x),
+    watch: isEnvDevelopment
 };
